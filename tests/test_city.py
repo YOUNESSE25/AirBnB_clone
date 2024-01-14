@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ City testing """
-import os
-import models
 import unittest
 from datetime import datetime
 from time import sleep

@@ -4,7 +4,6 @@ from datetime import datetime
 import uuid
 import models
 
-
 class BaseModel:
     '''basemodel class'''
     def __init__(self, *args, **kwargs):
@@ -22,7 +21,8 @@ class BaseModel:
                 if key == "__class__":
                     continue
                 elif key == "created_at" or key == "updated_at":
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
                 else:
                     setattr(self, key, value)
 
@@ -35,7 +35,7 @@ class BaseModel:
         """
         cls_name = self.__class__.__name__
         return "[{}] ({}) {}".format(cls_name, self.id, self.__dict__)
-
+        
     def save(self):
         """
         save the update time
@@ -53,3 +53,4 @@ class BaseModel:
         instance_dict["created_at"] = self.created_at.isoformat()
         instance_dict["updated_at"] = self.updated_at.isoformat()
         return instance_dict
+

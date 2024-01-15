@@ -24,7 +24,7 @@ class TestBasemodel(unittest.TestCase):
 
     def test_to_dict(self):
         """ to_dict test """
-        M = BaseModel()
+        Model1 = BaseModel()
         Model1_dict = Model1.to_dict()
         self.assertIsInstance(Model1_dict, dict)
         self.assertEqual(Model1_dict["__class__"], 'BaseModel')

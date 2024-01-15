@@ -2,7 +2,6 @@
 """
 FilStorage test
 """
-from re import X
 import models
 import unittest
 from models.base_model import BaseModel
@@ -16,7 +15,7 @@ class TestFileStorage_testing(unittest.TestCase):
         self.assertEqual(Type, FileStorage)
 
     def test_FileStorage_file_path_is_private_str(self):
-        Type =  type(FileStorage._FileStorage__file_path)
+        Type = type(FileStorage._FileStorage__file_path)
         self.assertEqual(Type, str)
 
     def testFileStorage_objects_is_private_dict(self):

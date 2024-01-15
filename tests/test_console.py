@@ -15,5 +15,6 @@ class TestHBNBCommand_testing(unittest.TestCase):
         h = HBNBCommand.prompt
         self.assertEqual("(hbnb) ", h)
 
+
 if __name__ == "__main__":
     unittest.main()

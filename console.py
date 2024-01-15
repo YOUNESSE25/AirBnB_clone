@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Module for console
 Console :console.py that contains the entry point of the command interpreter:
@@ -213,7 +213,6 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("*** Unknown syntax: {}".format(arg))
             return False
-
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

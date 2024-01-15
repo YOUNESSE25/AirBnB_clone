@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
-Console
+Console :console.py that contains the entry point of the command interpreter:
 """
 import cmd
 import re
@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """
-        Quit command to exit the program.
+        Quit command to exit the program
         """
         return True
 

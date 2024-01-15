@@ -21,3 +21,7 @@ class TestFileStorage_testing(unittest.TestCase):
     def testFileStorage_objects_is_private_dict(self):
         Type = type(FileStorage._FileStorage__objects)
         self.assertEqual(Type, dict)
+
+
+if __name__ == "__main__":
+    unittest.main()

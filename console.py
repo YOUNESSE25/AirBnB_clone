@@ -34,10 +34,9 @@ class HBNBCommand(cmd.Cmd):
         exit the program
         """
         return True
-    
-    #aliasing
+
+    # aliasing
     do_EOF = do_quit
-    
 
     def do_create(self, arg):
         """
@@ -88,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(cmd) < 2:
             print("** instance id missing **")
         else:
-            objs = storage.all() # dowlod data
+            objs = storage.all()
             k = "{}.{}".format(cmd[0], cmd[1])
             if k in objs:
                 del objs[k]
@@ -101,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
          Prints all string representation of all
          instances based or not on the class name
         """
-        objs = storage.all() # dowlod data
+        objs = storage.all()
 
         cmd = arg.split()
 
@@ -117,7 +116,6 @@ class HBNBCommand(cmd.Cmd):
                     to_print2 = str(value)
                     print(to_print2)
 
-
     def do_update(self, arg):
         """
          Updates an instance based on the class name
@@ -131,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(cmd) < 2:
             print("** instance id missing **")
         else:
-            objs = storage.all() # dowlod data
+            objs = storage.all()
 
             key = "{}.{}".format(cmd[0], cmd[1])
             if key not in objs:
@@ -145,9 +143,9 @@ class HBNBCommand(cmd.Cmd):
                 obj = objs[key]
                 if CurlyBraces:
                     try:
-                        dictArg = ast.literal_eval("{" + CurlyBraces.group(1) + "}")
-                        namesAttrib = list(dictArg.keys())
-                        valuesAttrib = list(dictArg.values())
+                        dA = ast.literal_eval("{" + CurlyBraces.group(1) + "}")
+                        namesAttrib = list(dA.keys())
+                        valuesAttrib = list(dA.values())
                         try:
                             attrib_name1 = namesAttrib[0]
                             attrib_value1 = valuesAttrib[0]
@@ -174,12 +172,11 @@ class HBNBCommand(cmd.Cmd):
 
                 obj.save()
 
-
     def do_count(self, arg):
         """
         Counts class
         """
-        objs = storage.all() # dowlod data
+        objs = storage.all()
         argToCount = arg.split()
         classConteur = 0
         if argToCount:
@@ -192,7 +189,6 @@ class HBNBCommand(cmd.Cmd):
                 print("** invalid class name **")
         else:
             print("** class name missing **")
-
 
     def default(self, arg):
         """ <class name>.method() """

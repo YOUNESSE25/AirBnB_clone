@@ -31,12 +31,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """
-        Quit command to exit the program
+        Quit command to exit the program.
         """
         return True
 
-    # aliasing
-    do_EOF = do_quit
+    def do_EOF(self, arg):
+        """
+        EOF (Ctrl+D) signal to exit the program
+        """
+        return True
 
     def do_create(self, arg):
         """

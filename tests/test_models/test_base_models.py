@@ -7,6 +7,8 @@ from models.base_model import BaseModel
 
 
 class TestBasemodel(unittest.TestCase):
+    """Module for BaseModel unittest"""
+
     def test_init(self):
         """ init test """
         Model1 = BaseModel()

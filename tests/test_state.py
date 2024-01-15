@@ -5,11 +5,12 @@ from datetime import datetime
 from time import sleep
 from models.state import State
 
+
 class TestState(unittest.TestCase):
     """state State class"""
 
     def test_Type(self):
-        Type =  type(State())
+        Type = type(State())
         self.assertEqual(State, Type)
 
     def test_id(self):
@@ -55,4 +56,3 @@ class TestState(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

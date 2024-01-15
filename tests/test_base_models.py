@@ -6,7 +6,6 @@ import unittest
 from models.base_model import BaseModel
 
 
-
 class TestBasemodel(unittest.TestCase):
     def test_init(self):
         """ init test """
@@ -25,14 +24,13 @@ class TestBasemodel(unittest.TestCase):
 
     def test_to_dict(self):
         """ to_dict test """
-        Model1 = BaseModel()
+        M = BaseModel()
         Model1_dict = Model1.to_dict()
         self.assertIsInstance(Model1_dict, dict)
         self.assertEqual(Model1_dict["__class__"], 'BaseModel')
         self.assertEqual(Model1_dict['id'], Model1.id)
-        self.assertEqual(Model1_dict['created_at'], Model1.created_at.isoformat())
-        self.assertEqual(Model1_dict["updated_at"], Model1.created_at.isoformat())
-
+        self.assertEqual(Model1_dict['created_at'], M.created_at.isoformat())
+        self.assertEqual(Model1_dict["updated_at"], M.created_at.isoformat())
 
     def test_str(self):
         """ Test for string representation """

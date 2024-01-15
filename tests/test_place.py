@@ -11,15 +11,15 @@ class TestPlace(unittest.TestCase):
 
     def test_inst(self):
         Type = type(Place())
-        self.assertEqual(Place, Type) 
+        self.assertEqual(Place, Type)
 
     def test_created_at(self):
         Type = type(Place().created_at)
-        self.assertEqual(datetime,Type)
+        self.assertEqual(datetime, Type)
 
     def test_updated_at(self):
         self.assertEqual(datetime, type(Place().updated_at))
-    
+
     def test_unique_ids(self):
         Model1 = Place()
         Model2 = Place()
@@ -54,6 +54,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(str, type(m_dict["id"]))
         self.assertEqual(str, type(m_dict["created_at"]))
         self.assertEqual(str, type(m_dict["updated_at"]))
+
 
 if __name__ == "__main__":
     unittest.main()

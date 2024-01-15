@@ -6,39 +6,40 @@ from datetime import datetime
 from time import sleep
 from models.user import User
 
+
 class TestUser_instantiation(unittest.TestCase):
     """test User class"""
 
     def test_Type(self):
-        Type =  type(User())
+        Type = type(User())
         self.assertEqual(User, Type)
 
     def test_Type_id_Type(self):
-        Type =  type(User().id)
+        Type = type(User().id)
         self.assertEqual(str, Type)
 
     def test_created_at_Type(self):
-        Type =  type(User().created_at)
+        Type = type(User().created_at)
         self.assertEqual(datetime, Type)
 
     def test_updated_at_Type(self):
-        Type =  type(User().updated_at)
+        Type = type(User().updated_at)
         self.assertEqual(datetime, Type)
 
     def test_email_Type(self):
-        Type =  type(User.email)
+        Type = type(User.email)
         self.assertEqual(str, Type)
 
     def test_password_Type(self):
-        Type =  type(User.password)
+        Type = type(User.password)
         self.assertEqual(str, Type)
 
     def test_first_name_Type(self):
-        Type =  type(User.first_name)
+        Type = type(User.first_name)
         self.assertEqual(str, Type)
 
     def test_last_name_Type(self):
-        Type =  type(User.last_name)
+        Type = type(User.last_name)
         self.assertEqual(str, Type)
 
     def test_ids(self):
@@ -54,7 +55,7 @@ class TestUser_instantiation(unittest.TestCase):
         self.assertLess(first_updated_at, Model.updated_at)
 
     def test_to_dict_Type(self):
-        Type =  type(User().to_dict())
+        Type = type(User().to_dict())
         self.assertTrue(dict, Type)
 
 

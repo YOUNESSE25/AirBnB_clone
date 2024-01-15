@@ -35,6 +35,7 @@ class TestCity_save(unittest.TestCase):
         Model1.save()
         self.assertLess(up_at, Model1.updated_at)
 
+
 class TestCity_to_dict(unittest.TestCase):
     """ tests to_dict City class"""
 

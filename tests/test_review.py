@@ -5,11 +5,12 @@ from datetime import datetime
 from time import sleep
 from models.review import Review
 
+
 class TestReview(unittest.TestCase):
     """ test Review class """
 
     def test_Type(self):
-        Type =  type(Review())
+        Type = type(Review())
         self.assertEqual(Review, Type)
 
     def test_Type_id(self):
@@ -17,11 +18,11 @@ class TestReview(unittest.TestCase):
         self.assertEqual(str, Type)
 
     def test_Type_created_at(self):
-        Type =  type(Review().created_at)
+        Type = type(Review().created_at)
         self.assertEqual(datetime, Type)
 
     def test_Type_updated_at(self):
-        Type =  type(Review().updated_at)
+        Type = type(Review().updated_at)
         self.assertEqual(datetime, Type)
 
     def test_ids(self):

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Serializing and deserializing """
+"""
+Serializing and deserializing
+"""
 import json
 from models.base_model import BaseModel
 from models.user import User

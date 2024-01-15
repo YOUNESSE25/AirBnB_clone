@@ -1,5 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 """
+Module for console
 Console :console.py that contains the entry point of the command interpreter:
 """
 import cmd
@@ -214,5 +215,5 @@ class HBNBCommand(cmd.Cmd):
             return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()

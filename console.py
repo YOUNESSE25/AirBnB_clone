@@ -201,18 +201,29 @@ class HBNBCommand(cmd.Cmd):
         cls_nm = dictSplitPoint[0]
         commande = dictSplitPoint[1].split('(')
         cmd_met = commande[0]
-        idParam = commande[1].split(')')[0]
         method_dict = {'all': self.do_all,
                        'show': self.do_show,
                        'destroy': self.do_destroy,
-                       'update': self.do_update,
                        'count': self.do_count}
+        p = {'update': self.do_update}
 
+        if cmd_met in method_dict:
+
+            idParam = commande[1].split(')')[0]
+
+        else:
+            u = commande[1].split(',')
+            wwa = u[2].split(')')
         if cmd_met in method_dict.keys():
-            return method_dict[cmd_met]("{} {}".format(cls_nm, idParam))
+            ff = method_dict[cmd_met]("{} {}".format(cls_nm, idParam))
+            return ff
+        if cmd_met in p.keys():
+            h = p[cmd_met]("{} {} {} {}".format(cls_nm, u[0], u[1], wwa[0]))
+            return h
         else:
             print("*** Unknown syntax: {}".format(arg))
             return False
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
